@@ -1,0 +1,87 @@
+.navbar{
+    background-color: #a9a9a9;
+    height: 80px;
+}
+.nav-title{
+    text-align: center;
+    color: #ffffff;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.nav-login{
+    text-align:center;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #000000;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nav-login a{
+    color: #7f1a1a;
+    text-decoration: none;
+}
+.nav-login a:hover{
+    color: #0bd708;
+    text-decoration: none;
+}
+.slider img{
+    margin-top: 1%;
+    width: 90%;
+    height: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.row{
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+.col{
+    float: left;
+    width: 20%;
+    padding: 0 30px;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 4px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+.card-img{
+    width: 240px;
+    height: 100px;
+}
+.footer{
+    background-color: #a9a9a9;
+    height: 30px;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+@media screen and (max-width: 1400px) {
+    .col {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+    .card-img{
+        width: auto;
+        height: auto;
+    }
+}
