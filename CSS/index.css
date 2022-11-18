@@ -74,25 +74,15 @@
     font-weight: bold;
     text-transform: uppercase;
 }
-@media screen and (max-width: 1400px) {
+
+@media screen and (max-width: 800px) {
     .col {
-        width: 100%;
-        display: block;
-        margin-bottom: 20px;
-    }
-    .card-img{
         width: auto;
-        height: auto;
-    }
-}
-@media screen and (max-width: 1800px) {
-    .col {
-        width: 100%;
         display: block;
         margin-bottom: 20px;
     }
     .card-img{
-        width: 500px;
+        width: 400px;
         height: auto;
     }
 }
