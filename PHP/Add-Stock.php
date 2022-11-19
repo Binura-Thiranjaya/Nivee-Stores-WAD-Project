@@ -8,8 +8,9 @@
         $quantity = $_POST['quantity'];
         $description = $_POST['description'];
         $barcode = $_POST['barcode'];
-        $status = "Published";
-        $catergory = "Food";
+        $status = $_POST['status'];
+        $category = $_POST['category'];
+        
         if($_FILES['image']['name'] != ""){
             $ENCODE_IMAGE = base64_encode(file_get_contents($_FILES['image']['tmp_name']));//encode image to base64
         }

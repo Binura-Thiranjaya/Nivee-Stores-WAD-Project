@@ -31,7 +31,10 @@
         <div id="viewStock" class="tabcontent">
             <h3>VIEW ALL STOCK</h3>
            
-            <!--CARD-->
+            <!--Import php file-->
+            <?php
+                require 'View-Stock.php';
+                ?>
         </div>
 
         <div id="addStock" class="tabcontent">
@@ -54,8 +57,22 @@
                     <label for="description" class="addStock-label">Description</label>
                     <input type="text" id="description" name="description" placeholder="Write something..">
 
+                    <label for="category" class="addStock-label">Category</label>
+                    <select id="category" name="category" class="addStock-input">
+                        <option value="Food" >Food</option>
+                        <option value="Drink">Drink</option>
+                        <option value="Snack">Snack</option>
+                        <option value="Other">Other</option>
+                    </select>
+
                     <label for="image" class="addStock-label">Image</label>
                     <input type="file" id="image" name="image" placeholder="Image of the product..">
+
+                    <label for="status" class="addStock-label">Status</label>
+                    <select id="status" name="status" class="addStock-input">
+                        <option value="Published">Published</option>
+                        <option value="Unpublished">Unpublished</option>
+                    </select>
 
                     <input type="submit" value="Submit" class="addButton" name="addStock">
                 </form>
