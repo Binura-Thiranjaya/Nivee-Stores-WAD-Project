@@ -15,6 +15,7 @@
     //echo $_SESSION['admin_id'];
     //echo $_SESSION['admin_email'];
 ?>
+
 <body>
     <p class="heading">Admin Portal</p>
     <div class="container">
@@ -45,10 +46,10 @@
                     <input type="text"  id="name" name="name" placeholder="Name of the product..">
 
                     <label for="price" class="addStock-label">Price</label>
-                    <input type="text" id="price" name="price" placeholder="Price of the product..">
+                    <input type="number" id="price" name="price" placeholder="Price of the product..">
 
                     <label for="quantity" class="addStock-label">Quantity</label>
-                    <input type="text" id="quantity" name="quantity" placeholder="Quantity of the product..">
+                    <input type="number" id="quantity" name="quantity" placeholder="Quantity of the product..">
 
                     <label for="description" class="addStock-label">Description</label>
                     <input type="text" id="description" name="description" placeholder="Write something..">

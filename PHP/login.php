@@ -25,4 +25,3 @@
             echo "Invalid email or password";
         }
     }
-    session_abort();
