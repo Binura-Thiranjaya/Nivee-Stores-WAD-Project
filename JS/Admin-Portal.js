@@ -11,3 +11,14 @@ function openCity(evt, cityName) {
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
 }
+function clearAll_AddStock()
+{
+    document.getElementById("name").value = "";
+    document.getElementById("price").value = "";
+    document.getElementById("quantity").value = "";
+    document.getElementById("description").value = "";
+    document.getElementById("barcode").value = "";
+    document.getElementById("category").checked = false;
+    document.getElementById("image").value = "";
+    document.getElementById("status").checked = false;
+}

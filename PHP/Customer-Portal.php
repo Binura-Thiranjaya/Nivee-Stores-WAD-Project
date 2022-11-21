@@ -5,12 +5,13 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin Portal</title>
+    <title>Customer-Portal</title>
 </head>
 <?php
     session_start();
-    echo $_SESSION['customer_id'];
-    echo $_SESSION['customer_email'];
+    echo "<p style='color:red;float:left;'><br>Customer Id: ".$_SESSION['customer_email']. "</p>";
+
+    require 'View-Products.php';
 ?>
 
 <body>

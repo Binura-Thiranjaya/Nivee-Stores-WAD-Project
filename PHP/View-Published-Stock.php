@@ -1,13 +1,12 @@
 <?php
-    //VIEW STOCK
     $conn = require 'Connection.php';
-    $sql = "SELECT * FROM `Stock`";
+    $sql = "SELECT * FROM `Stock` WHERE `STATUS` LIKE 'Published' ORDER BY `STATUS`";
     $result = $conn->query($sql);
     //link css style
     echo "<link rel='stylesheet' href='../CSS/Admin-Portal.css'>";
 
     if ($result->num_rows > 0) {
-        // output data of each row
+        // output data of each rows
         while($row = $result->fetch_assoc()) {
            //CARD
               echo "<div class='card' style='
@@ -89,7 +88,7 @@
                     
                     echo "<button class='btn btn-primary' style='
                                                                 border: none;'>
-                                                                <a href='./Edit-Stock.php?ID=".$row['ID']."' style='
+                                                                <a href='Admin-Portal.php?ID=".$row['ID']."' style='
                                                                         background-color: #f44336;
                                                                         color: white;
                                                                         padding: 14px 25px;
@@ -97,12 +96,8 @@
                                                                         text-decoration: none;
                                                                         display:inline-block;'>
                                                                         Edit</a></button>"; 
-
                 echo "</div>";
                 echo "</div>";
-
-
-            
         }
     } else {
         echo "0 results";

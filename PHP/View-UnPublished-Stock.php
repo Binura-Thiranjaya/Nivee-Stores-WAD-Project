@@ -1,7 +1,6 @@
 <?php
-    //VIEW STOCK
     $conn = require 'Connection.php';
-    $sql = "SELECT * FROM `Stock`";
+    $sql = "SELECT * FROM `Stock` WHERE `STATUS` LIKE 'Unpublished' ORDER BY `STATUS`";
     $result = $conn->query($sql);
     //link css style
     echo "<link rel='stylesheet' href='../CSS/Admin-Portal.css'>";
@@ -87,9 +86,9 @@
                                     text-align: center;'>
                                     Status: ".$row['STATUS']."</p>";
                     
-                    echo "<button class='btn btn-primary' style='
+                    echo "<button class='btn btn-primary'  style='
                                                                 border: none;'>
-                                                                <a href='./Edit-Stock.php?ID=".$row['ID']."' style='
+                                                                <a href='Edit-Stock.php?ID=".$row['ID']."' style='
                                                                         background-color: #f44336;
                                                                         color: white;
                                                                         padding: 14px 25px;
