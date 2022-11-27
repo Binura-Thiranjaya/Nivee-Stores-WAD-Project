@@ -9,8 +9,35 @@
     <script src="../JS/Admin-Portal.js"></script>
     <title>Admin-Portal</title>
 </head>
+<?php
+session_start();
+
+?>
+<script>
+    function logout() {
+        sessionStorage.clear();
+        window.location.href = "../HTML/Login.html";
+    }
+</script>
+<style>
+    .btn-logout{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #4CAF50;
+    border: none;
+    color: red;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+</style>
 <body>
     <p class="heading">Admin Portal</p>
+    <!-- Logout  -->
+ 
     <div class="container">
         <div class="tab">
             <button class="tablinks" onclick="openCity(event, 'viewStock')">View All Stock</button>
@@ -19,6 +46,7 @@
             <button class="tablinks" onclick="openCity(event, 'unpublishedStock')">View Unpublished Stock</button>
             <button class="tablinks" onclick="openCity(event, 'editStock')">Edit Stock</button>
             <button class="tablinks" onclick="openCity(event, 'viewAdmin')">View Admin</button>
+            <button onclick="logout()" class="btn-logout">Logout</button>
         </div>
 
         <div id="viewStock" class="tabcontent">

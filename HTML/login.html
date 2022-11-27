@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="../CSS/login.css">
     <title>SignIn/SignUp</title>
 </head>
+<script>
+    function redirectSignUp(){
+        window.location.href = "signup.html";
+    }
+    function cancel(){
+        //go back
+        window.history.back();
+    }
+</script>
 <body>
     <div class="login-form">
         <form action="../PHP/login.php" method="post">
@@ -15,9 +24,10 @@
             <label for="password">Password</label>
             <input type="password" name="password" id="password" placeholder="Password">
             <button type="submit" class="btn-login"  name="login">Login</button>
-            <button type="submit" class="btn-cancel">Cancel</button>
-
         </form>
+        <button type="button" class="btn-login" onclick="redirectSignUp()">Sign Up</button>
+        <button type="reset" class="btn-cancel"onclick="cancel()" >Cancel</button>
+
     </div>
     
 </body>

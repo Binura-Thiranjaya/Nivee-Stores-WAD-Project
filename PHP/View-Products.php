@@ -74,7 +74,7 @@
                     
                     echo "<button class='btn btn-primary' style='
                                                                 border: none;'>
-                                                                <a href='Admin-Portal.php?ID=".$row['ID']."' style='
+                                                                <a href='cart.php?ID=".$row['ID']."' style='
                                                                         background-color: #f44336;
                                                                         color: white;
                                                                         padding: 14px 25px;

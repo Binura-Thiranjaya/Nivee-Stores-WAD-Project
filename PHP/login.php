@@ -22,10 +22,6 @@
                 header("Location: Customer-Portal.php");
             }  
         }else{
-            $insertSql = "INSERT INTO `Users`(`id`,`Email`, `Password`,`Role`) VALUES (NULL,'$email','$password','Customer')";
-            $insertResult = mysqli_query($con, $insertSql);
-            $last_id = mysqli_insert_id($con);
-            $_SESSION['customer_id'] = $last_id;
-            header("Location: Customer-Portal.php"); 
+            echo "<script type='text/javascript'>window.location.href = '../HTML/SignUp.html';</script>";
         }
     }

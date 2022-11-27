@@ -1,21 +1,38 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Customer-Portal</title>
 </head>
-<?php
-    session_start();
-    echo "<p style='color:red;float:left;'><br>Customer Id: ".$_SESSION['customer_email']. "</p>";
-
-    require 'View-Products.php';
-?>
+<style>
+    footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: sandybrown;
+        color: white;
+        text-align: center;
+    }
+</style>
 
 <body>
+    <?php
+    session_start();
 
+    require 'View-Products.php';
+    ?>
 </body>
-</html>
+<footer>
+    <p style="color: red;text-align:center;"><b>Welcome User:
+            <?php
+            echo $_SESSION['customer_email'];
 
+            ?>
+        </b></p>
+</footer>
+
+</html>
