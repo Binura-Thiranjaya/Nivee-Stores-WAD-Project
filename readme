@@ -1,0 +1,8 @@
+Project Configuration
+1. Clone the project from the repository
+2. import the database from the database(DB) folder in the project to your local database
+Connection Information
+Username: root
+Password: 
+Database: NIVEE_STORES
+3. Open the project in your IDE and run the project
