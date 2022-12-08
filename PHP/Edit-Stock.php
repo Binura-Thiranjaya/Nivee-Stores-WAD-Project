@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,35 +8,61 @@
     <link rel="stylesheet" href="../CSS/Admin-Portal.css">
     <title>EdiT-Stock</title>
 </head>
+
 <body>
     <div>
-        <form action="Edit-Stock.php" method="post" enctype="multipart/form-data">
-            <label for="name" class="addStock-label">Barcode</label>
-            <input type="text" class="addStock-input" id="barcode" name="barcode" placeholder="Barcode of the product..">
-
-            <label for="name" class="addStock-label">Name</label>
-            <input type="text" class="addStock-input" id="name" name="name" placeholder="Name of the product..">
-
-            <label for="price" class="addStock-label">Price</label>
-            <input type="number" class="addStock-input" id="price" name="price" placeholder="Price of the product..">
-
-            <label for="quantity" class="addStock-label">Quantity</label>
-            <input type="number" class="addStock-input" id="quantity" name="quantity" placeholder="Quantity of the product..">
-
-            <label for="description" class="addStock-label">Description</label>
-            <input type="text" class="addStock-input" id="description" name="description" placeholder="Write something..">
-
-            <label for="category" class="addStock-label">Category</label>
-            <select id="category" name="category" class="addStock-input">
-                <option value="Food" >Food</option>
-                <option value="Drink">Drink</option>
-                <option value="Snack">Snack</option>
-                <option value="Other">Other</option>
-            </select>
-
-            <input type="submit" value="Submit" name="submit" class="addButton">
-        </form>
+        <?php
+        session_start();
+        if(!isset($_SESSION['admin_id'])){
+            header("Location: ../HTML/Login.html");
+        }
+        if (isset($_GET['ID'])) {
+            $id = $_GET['ID'];
+            $con = require_once("Connection.php");
+            $sql = "SELECT * FROM stock WHERE ID = '$id'";
+            $result = mysqli_query($con, $sql);
+            $row = mysqli_fetch_assoc($result);
+            echo "<form action='Edit-Stock.php' method='POST'>
+            <input type='hidden' name='ID' value='" . $row['ID'] . "'>
+            <label for='Name' class='addStock-label' >Name</label>
+            <input type='text'class='addStock-input' name='Name' value='" . $row['NAME'] . "'>
+            <label for='Price' class='addStock-label' >Price</label>
+            <input type='text' name='Price' class='addStock-input' value='" . $row['PRICE'] . "'>
+            <label for='Quantity' class='addStock-label' >Quantity</label>
+            <input type='text' name='Quantity' class='addStock-input' value='" . $row['QUANTITY'] . "'>
+            <label for='Description' class='addStock-label'>Description</label>
+            <input type='text' name='Description' class='addStock-input' value='" . $row['DESCRIPTION'] . "'>
+            <label for='Published' class='addStock-label'>Published</label>
+            <select id='status' name='status' class='addStock-input'>
+            <option value='Published'>Published</option>
+            <option value='Unpublished'>Unpublished</option>
+            </select>            
+            <input type='submit' name='submit' value='Update' class='addButton'>
+            </form>";
+        }
+        ?>
     </div>
-    
+
 </body>
+<?php
+if (isset($_POST['submit'])) {
+    $id = $_POST['ID'];
+    $name = $_POST['Name'];
+    $price = $_POST['Price'];
+    $quantity = $_POST['Quantity'];
+    $description = $_POST['Description'];
+    $status = $_POST['status'];
+    $con = require_once("Connection.php");
+    $sql = "UPDATE Stock SET NAME = '$name', PRICE = '$price', QUANTITY = '$quantity', DESCRIPTION = '$description', STATUS= '$status' WHERE ID = '$id'";
+    $result = mysqli_query($con, $sql);
+    if ($result) {
+        echo "<script>alert('Stock Updated Successfully')</script>";
+        header("Location: Admin-Portal.php");
+    } else {
+        echo "<script>alert('Stock Not Updated')</script>";
+        header("Location: Admin-Portal.php");
+    }
+}
+?>
+
 </html>

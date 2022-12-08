@@ -1,0 +1,33 @@
+.container{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+.card{
+    border:1px solid #ccc;
+    width: max-content;
+    text-align: center;
+    display: inline-block;
+    margin: 5px;
+
+}
+.card img{
+  width: 300px;
+  padding: 5px;
+}
+.title{
+    font-weight: bold;
+    margin: 20px;
+}
+button{
+    border:2px solid #ccc;
+    background: #ccc;
+    color: aliceblue;
+    font-weight: bold;
+    margin: 20px;
+    padding: 5px 10px;
+}
+button:hover{
+    box-shadow: 0 0 5px #ccc;
+}

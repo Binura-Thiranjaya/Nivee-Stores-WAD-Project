@@ -44,7 +44,6 @@ session_start();
             <button class="tablinks" onclick="openCity(event, 'addStock')">Add Stock</button>
             <button class="tablinks" onclick="openCity(event, 'publishedStock')">View Published Stock</button>
             <button class="tablinks" onclick="openCity(event, 'unpublishedStock')">View Unpublished Stock</button>
-            <button class="tablinks" onclick="openCity(event, 'editStock')">Edit Stock</button>
             <button class="tablinks" onclick="openCity(event, 'viewAdmin')">View Admin</button>
             <button onclick="logout()" class="btn-logout">Logout</button>
         </div>
@@ -113,12 +112,6 @@ session_start();
             <?php
                 require 'View-UnPublished-Stock.php';
                 ?>        </div>
-
-        <div id="editStock" class="tabcontent">
-            <h3>EDIT STOCK</h3>
-
-
-        </div>
 
         <div id="viewAdmin" class="tabcontent">
             <h3>VIEW ADMIN</h3>
